@@ -48,4 +48,11 @@ p {
     line-height: 1.6;
     margin-bottom: 20px;
 }
-a { color: brown; }
+a:link, a:visited { 
+    text-decoration: none;
+    color: red; 
+}
+a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: rgb(91, 16, 6)
+}
