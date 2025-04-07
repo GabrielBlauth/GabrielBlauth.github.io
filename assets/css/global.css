@@ -11,7 +11,7 @@ nav, header, section, footer { width: 100% }
 nav *:last-child, header *:last-child, section *:last-child, footer *:last-child { margin-bottom: 0 }
 img { width: 100%; height: auto; display: block }
 input, button, textarea, select { font: inherit }
-h1, h2, h3, h4, p, li { word-break: break-word; hyphens: auto }
+h1, h2, h3, h4, p, li { word-break: break-word; -webkit-hyphens: auto; hyphens: auto }
 
 :root {
     /* ==== Color variables ==== */
@@ -350,7 +350,7 @@ h3 {
     line-height: 1;
     color:#fff;
     text-shadow: 2px 2px #222;
-    }
+}
 
 p {
     text-align: center;
@@ -361,4 +361,5 @@ p {
 
 a {     
     color: white;
-    font-weight: 800; }
+    font-weight: 800; 
+}

@@ -16,6 +16,10 @@ h1 {
     animation: zoomIn 2s ease-in-out;
     transform-origin: center;
 }
+.brand img {
+    width: 90px;
+    height: 90px;
+}
 
 /* Definição da animação */
 @keyframes zoomIn {
