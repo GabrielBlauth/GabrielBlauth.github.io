@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gabriel Blauth | Sample Pages </title>
+    <meta name="description" content="Welcome to my website that showcases some of my digital creations.">
+    <link rel="preload" href="assets/videos/programming-img.jpg" as="image">
+    <link rel="stylesheet" href="assets/css/global.css">
+
+    <!-- Add Font Awesome for the envelope icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   <!-- Website Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon_io/apple-touch-icon.png">    
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon_io/favicon-32x32.png">    
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon_io/favicon-16x16.png">    
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1GNG433TV2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1GNG433TV2');
+    </script> 
+    
+    
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .container-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #0f172a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            font-size: 20px;
+        }
+        
+        .brand img {
+            height: 90px;
+            width: auto;
+        }
+        
+        .links-wrapper {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .links-wrapper li {
+            margin-left: 30px;
+        }
+        
+        .links-wrapper li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.2s linear;
+        }
+        
+        .links-wrapper li a:hover:not(#btn-cta) {
+            color: #d8d7d7;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 7px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 20px;
+        }
+        
+        #btn-cta {
+            background-color: white;
+            color: black;
+            border: none;
+            text-decoration: none !important;
+        }
+        
+        #btn-cta:hover {
+            background-color: #f0f0f0;
+            color: black;
+            text-decoration: none !important;
+        }
+        
+        .item-icon {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .item-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: all 0.3s;
+        }
+        
+        body {
+            height: 2000px;
+            margin: 0;
+            ;
+        }
+    </style>
+</head>
+<body>
+    <!-- navigation menu -->
+    <nav class="container-menu menu-desktop menu-sticky nav-toggle">
+        <a href="../index.html" class="brand">
+			<img src="assets/img/website-logo-sample.png" alt="Sample website logo" class="logo-img">
+		</a> 
+        <ul class="links-wrapper">            
+            <li><a href="../../index.html">Home</a></li>
+			<li><a href="../../portfolio/index.html">Portfolio&nbsp;HTML</a></li>
+			<li><a href="portfolio/js/index.html">Portfolio&nbsp;JavaScript</a></li>
+            <li><a href="#">Sample&nbsp;Web&nbsp;Pages</a></li>
+			<li><a href="../../store/index.html">Store</a></li>
+            <li><a class="btn btn-solid btn-soft" id="btn-cta" href="../../contact/index.html"><span>Contact</span> <i class="fa-regular fa-envelope"></i></a></li>
+        </ul>
+        <div class="item-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-text-container">
+            <h1 class="slide-in-top"> Hi, I am Gabriel Blauth</h1>
+            <h2 class="slide-in-left"> Web Site Developer</h2>
+        </div>
+
+        <div class="hero-bg-media">
+            <video loop playsinline muted autoplay poster="assets/videos/myVideo.mp4" class="background-video" disablepictureinpicture preload="auto"> 
+            <source src="assets/videos/myVideo.mp4" type="video/mp4">
+            </video>   
+        </div>
+
+        <div class="bg-overlay"></div>
+    </header>    
+    <header>
+        <h3>Sample Web Pages</h3>
+        <p><a href="exercises/page-1.html">A Tale of Two Cities</a></p>
+        <p><a href="exercises/page-2.html">Purple Rain</a></p>
+        <p><a href="exercises/page-3.html">Web Page with Sections</a></p>
+        <p><a href="exercises/page-4.html">Vincent van Gogh</a></p> 
+        <p><a href="exercises/page-5.html">Irish Tourism</a></p> 
+        <p><a href="exercises/page-6.html">Smoothies</a></p> 
+        <p><a href="exercises/page-7.html">Software Analytics</a></p>
+        <p><a href="exercises/page-8.html">The Box Model</a></p> 
+        <p><a href="exercises/page-9.html">Web Page With Cards</a></p>
+        <p><a href="exercises/page-10.html">Web Page With Fonts</a></p>
+        <p><a href="exercises/hero-text.html">Hero block with animated text</a></p>
+        <p><a href="exercises/hero-image.html">Hero block with background image</a></p>
+        <p><a href="exercises/hero-video.html">Hero block with background video</a></p>
+        <p><a href="https://gabrielblauth.github.io/portfolio/fashion/">Super Snazzy</a></p>
+    </header>   
+    
+</body>
+<p class="privacy"><a href="../privacy.html">Privacy &amp; Legal</a></p>
+</html>
