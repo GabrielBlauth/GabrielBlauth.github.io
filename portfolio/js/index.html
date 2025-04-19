@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Gabriel Blauth | Web Designer and Developer</title>
+    <title> Gabriel Blauth | Portifolio JavaScript</title>
     <meta name="description" content="A sample collection of my recent JavaScript projects.">
     
 	<!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/lunadoge.css" />
     <link rel="stylesheet" href="assets/css/css-javascript.css" />
     
+     <!-- Website Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon_io/apple-touch-icon.png">    
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon_io/favicon-32x32.png">    
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon_io/favicon-16x16.png">    
@@ -27,8 +28,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>        
-        header .col-text h2 { line-height: 1.8 }
-        .col-1 > h3 { line-height: 1.8 } 
+        header .col-text h2 { line-height: 1 }
+        .col-1 > h3 { line-height: 1.1 } 
         body {
             font-family: 'Roboto', sans-serif;
         }        
@@ -40,7 +41,7 @@
 
         /* Main Colours */
         .theme-js {
-            background-color: #0f172a
+            background-color: #112536
         }
 
         .theme-js .col-4 { background-color: var(--green-100) }
@@ -61,7 +62,24 @@
         width: 90px;
         height: 90px;
     }
-        
+    
+    .nav-toggle {        
+            width: 100%;
+            max-width: 1920px;            
+            padding: 0 4%;
+            position: relative;
+            min-height: 115px;
+            overflow: visible;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+    }   
+    
+    div {
+            display: block;
+            unicode-bidi: isolate;
+    }         
+           
     </style>	
 
 </head>
@@ -69,15 +87,15 @@
 
 <body>    
     <!-- navigation menu -->
-
-    <nav class="container-menu menu-desktop menu-sticky">
+    <nav class="container-menu menu-desktop menu-sticky nav-toggle">
         <a href="../index.html" class="brand">
 			<img src="assets/img/website-logo-sample.png" alt="Sample website logo" class="logo-img">
 		</a> 
         <ul class="links-wrapper">            
             <li><a href="../../index.html">Home</a></li>
-			<li><a href="../../portfolio/index.html">Portfolio HTML</a></li>
-			<li><a href="../js/index.html">Portfolio JavaScript</a></li>
+			<li><a href="../../portfolio/index.html">Portfolio&nbsp;HTML</a></li>
+			<li><a href="../js/index.html">Portfolio&nbsp;JavaScript</a></li>
+            <li><a href="../../samplePages.html">Sample&nbsp;Web&nbsp;Pages</a></li>
 			<li><a href="../../store/index.html">Store</a></li>
             <li><a class="btn btn-solid btn-soft" id="btn-cta" href="../../contact/index.html"><span>Contact</span> <i class="fa-regular fa-envelope"></i></a></li>
         </ul>
@@ -91,7 +109,7 @@
     <!-- header hero block -->
     <header class="hero-block hero-block-js">
         <div class="hero-text-container">
-            <h1>JavaScript Projects</h1>
+            <h1>Portifolio JavaScript</h1>
             <h2>A selection of my recent JavaScript projects.</h2>
             <img src="assets/img/code.png" alt="Sample JavaScript code">
         </div>

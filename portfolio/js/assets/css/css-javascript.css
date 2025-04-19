@@ -7,13 +7,14 @@
 .container-menu a#btn-cta:visited { color: var(--white-000); font-weight: 600 }
 .container-menu .item-icon .bar1,.container-menu .item-icon .bar2,.container-menu .item-icon .bar3 { background-color: var(--white-000) }
 .container-menu a#btn-cta:link,
-.container-menu a#btn-cta:visited { background-color: var(--blue-500) }
+.container-menu a#btn-cta:visited { color: #000;border: solid 2px;background-color: #fff;
+}
 .container-menu a#btn-cta:focus,
 .container-menu a#btn-cta:hover,
-.container-menu a#btn-cta:active { background-color: var(--blue-400) }
+.container-menu a#btn-cta:active { background-color: #e9e9e9 }
 .container-menu a#btn-cta:focus,
 .container-menu a#btn-cta:hover,
-.container-menu a#btn-cta:active { border-color: var(--blue-400) }
+.container-menu a#btn-cta:active { border-color: #fff }
 
 header.hero-block-js { 
     min-height: 200px !important;
@@ -67,7 +68,7 @@ header.hero-block-js .hero-text-container img {
 
 .theme-js a.btn { padding: 13px 20px 13px 20px; font-weight: 600; border-width: 0 }
 
-@-moz-document url-prefix() { .theme-js .col-2 a.btn { padding-bottom: 17px } }
+.theme-js .col-2 a.btn { padding-bottom: 17px }
 
 .theme-js .col-2 a.btn > :nth-child(2) { margin-left: 10px }
 

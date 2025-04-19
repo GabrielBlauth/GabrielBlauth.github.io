@@ -1713,13 +1713,36 @@ div[class*='col-'] figure.icon {
 }
 
 /* Hyperlinks in text */
+/* Estilo padrão para links (exceto .btn) */
 a:not(.btn):any-link {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 7px;
-    color: var(--blue-700);
+    color: #7dd3fc;
     transition: all 0.2s linear;
 }
+
+/* Hover para links normais (exceto .btn e ícones) */
+
+
+
+
+/* Estilo para ícones (sem sublinhado) */
+.fa-linkedin, 
+.fa-github, 
+.fa-instagram {
+    text-decoration: none !important; /* Remove sublinhado */
+    color: #7dd3fc; /* Mesma cor dos links */
+    transition: all 0.2s linear;
+}
+
+/* Hover para ícones (só muda a cor) */
+.fa-linkedin:hover, 
+.fa-github:hover, 
+.fa-instagram:hover {
+    color: #b74949 !important; /* Vermelho no hover */
+}
+
 
 :is(a:not(.btn):focus, a:not(.btn):hover, a:not(.btn):active) {
     text-decoration: none;
@@ -2076,8 +2099,8 @@ footer ul.footer-links li a:visited {
     text-decoration-thickness: 2px;
     text-underline-offset: 7px;
     text-decoration-color: var(--white-000);
-    color: var(--white-000);
-    transition: all 0.2s linear;
+    color: #7dd3fc;
+    transition: all 0.2s linear;    
 }
 
 footer ul.footer-links li a:hover, 
@@ -2090,7 +2113,7 @@ footer ul.footer-links li a:active  {
 footer ul.footer-icons li a:any-link i {
     text-decoration: none !important;
     font-size: calc(22px + (28 - 22) * ((100vw - 320px)/(1920 - 320)));
-    color: var(--white-000);
+    color: #7dd3fc;
     border-bottom-width: 0;
     transition: all 0.2s linear;
 }
@@ -2101,7 +2124,7 @@ footer ul.footer-icons li a:any-link i {
     border-bottom-color: transparent !important; 
     text-decoration-thickness: 0;
     text-underline-offset: 0;
-    color: var(--white-000);
+    color: #7dd3fc;
 }
 
 /* Privacy and legal link */
@@ -2111,8 +2134,8 @@ footer p.privacy a:link, footer p.privacy a:hover {
     text-decoration-thickness: auto;
     text-decoration-thickness: 2px;
     text-underline-offset: 7px;
-    text-decoration-color: var(--white-000);
-    color: var(--white-000);
+    text-decoration-color: #7dd3fc;;
+    color: #7dd3fc;
     transition: all 0.2s linear;
 }
 
@@ -2192,8 +2215,6 @@ footer p.privacy a:hover, footer p.privacy a:active {
     background-color: transparent;
 }
 
-
-
 /* Menu links */
 .container-menu ul {
     display: flex;
@@ -2203,18 +2224,17 @@ footer p.privacy a:hover, footer p.privacy a:active {
 }
 
 .container-menu ul li { 
-    display: inline-block; 
-    list-style-type: none;
-    margin-right: 50px;
+    display: block;
+    margin-right: 20px;
+    font-size: calc(17px + (19 - 17) * ((100vw - 320px) / (1140 - 320)));
+    font-weight: 0;
+    background-color: transparent;
+    transition: .5s ease-in-out;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.container-menu ul li:last-child { margin-right: 0 }
-
-.container-menu ul li a { 
-    font-size: calc(18px + (20 - 18) * ((100vw - 320px)/(1920 - 320)));
-    font-family: var(--sans-serif);
-    font-weight: 700;
-}
+.container-menu ul li:last-child { margin-right: 10 }
 
 .container-menu a:link,
 .container-menu a:visited { 
@@ -2367,6 +2387,7 @@ footer p.privacy a:hover, footer p.privacy a:active {
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
 }
+
 
 
 
