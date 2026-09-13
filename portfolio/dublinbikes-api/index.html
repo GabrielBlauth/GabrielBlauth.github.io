@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Blauth | DublinBikes API</title>
+    <meta name="description" content="A .NET 8 Web API tracking real-time Dublin bike-station availability, backed by Azure Cosmos DB.">
+
+	<!-- Stylesheets -->
+    <link rel="stylesheet" href="https://lunevedy.com/assets/2.0/css/lunevedy.min.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- Font Awesome 6 icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body id="top-of-page">
+
+    <!-- header starts here -->
+    <header class="theme-dark hero-bg text-center-desktop text-center-mobile desktop-min-height-90vh">
+
+        <div class="container-text">
+            <h1 class="text-shadow">DublinBikes API</h1>
+            <h2 class="text-shadow">A real-time .NET 8 Web API tracking Dublin bike-station availability on Azure Cosmos DB.</h2>
+        </div>
+
+        <div class="container-overlay"></div>
+
+    </header>
+    <!-- header ends here -->
+
+    <main>
+
+        <!-- Overview section -->
+        <section class="section-selector-1 w-820px text-center-desktop text-center-mobile theme-dark">
+
+            <h2>Overview</h2>
+            <p class="bigger-desktop bigger-mobile">A .NET 8 Web API that tracks real-time station availability across Dublin's bike-share network, backed by Azure Cosmos DB. Built to go beyond a simple CRUD app — with a background service simulating live data, full test coverage, and an automated CI/CD pipeline.</p>
+
+        </section>
+
+        <!-- Feature: Real-time background service -->
+        <section class="theme-light w-820px section-selector-2">
+
+            <h2>Real-Time Data, Verified</h2>
+            <p>A background service (<code>IHostedService</code>) updates every station's availability automatically every 15 seconds, simulating real-time bike movement instead of static data.</p>
+            <figure>
+                <img src="assets/img/dublinbikes-swagger.jpg" alt="Swagger documentation for the DublinBikes API">
+            </figure>
+            <p>Rather than just trusting the code, I verified this end-to-end: pulling the same station's document from Cosmos DB twice, 20 seconds apart, and confirming the numbers changed on their own — the difference between "should work" and "does work."</p>
+
+        </section>
+
+        <!-- Feature: Filtering, sorting, pagination -->
+        <section class="theme-light w-820px section-selector-3">
+
+            <h2>Filtering, Sorting &amp; Pagination</h2>
+            <p>The API supports filtering by status and minimum bikes available, sorting by any field, and full pagination — all combinable in a single request.</p>
+            <figure>
+                <img src="assets/img/dublinbikes-filter.jpg" alt="Filtered API response showing sorted station data">
+            </figure>
+            <p>Full CRUD operations are backed by input validation and correct HTTP status codes (200, 201, 400, 404, 409), documented end-to-end via Swagger/OpenAPI.</p>
+
+        </section>
+
+        <!-- Feature: Azure Cosmos DB -->
+        <section class="theme-light w-820px section-selector-2">
+
+            <h2>Live on Azure Cosmos DB</h2>
+            <p>Station data is persisted in Azure Cosmos DB rather than a static file — meaning the API reflects a real, changing dataset, not a fixture.</p>
+            <figure>
+                <img src="assets/img/dublinbikes-cosmosdb.jpg" alt="Azure Cosmos DB Explorer showing a live station document">
+            </figure>
+
+        </section>
+
+        <!-- Tech stack + CTA -->
+        <section class="w-1356px section-selector-4 theme-dark text-center-desktop text-center-mobile">
+
+            <h2>Tech Stack</h2>
+            <p class="bigger-desktop bigger-mobile">C# &middot; .NET 8 &middot; Azure Cosmos DB &middot; Swagger/OpenAPI &middot; xUnit &middot; GitHub Actions</p>
+
+            <div class="container-btn">
+                <a href="https://github.com/GabrielBlauth/DublinBikes-API" class="btn btn-solid btn-soft" target="_blank" rel="noopener">
+                    <span>View on GitHub</span><i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <p><a href="/portfolio/index.html">Back to Portfolio</a> &nbsp;|&nbsp; <a href="/index.html">Back to Home</a></p>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
