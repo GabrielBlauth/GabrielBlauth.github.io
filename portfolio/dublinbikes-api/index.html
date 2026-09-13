@@ -50,11 +50,12 @@
         <section class="theme-light w-820px section-selector-2">
 
             <h2>Real-Time Data, Verified</h2>
-            <p>A background service (<code>IHostedService</code>) updates every station's availability automatically every 15 seconds, simulating real-time bike movement instead of static data.</p>
+            <p>Most demo APIs serve static, unchanging data. This one doesn't. A background service (<code>IHostedService</code>) runs continuously alongside the API, picking up every station in the database and updating its bike counts, stand availability, and timestamp automatically every 15 seconds — simulating the kind of live movement a real bike-share network would have, without any manual intervention.</p>
             <figure>
                 <img src="assets/img/dublinbikes-swagger.jpg" alt="Swagger documentation for the DublinBikes API">
             </figure>
-            <p>Rather than just trusting the code, I verified this end-to-end: pulling the same station's document from Cosmos DB twice, 20 seconds apart, and confirming the numbers changed on their own — the difference between "should work" and "does work."</p>
+            <p>Building the background service was the easy part. The harder — and more important — part was proving it actually worked, rather than just assuming it did because the code looked right. So I verified it end-to-end: I opened the same station's document directly in Azure Cosmos DB's Data Explorer, recorded its values, waited 20 seconds without touching anything, and reopened it. The available bike count, stand availability, and last-updated timestamp had all changed on their own.</p>
+            <p>That small verification step is the difference between "this should work" and "this does work" — and it's a habit I try to carry into everything I build, not just this project.</p>
 
         </section>
 
@@ -62,11 +63,12 @@
         <section class="theme-light w-820px section-selector-3">
 
             <h2>Filtering, Sorting &amp; Pagination</h2>
-            <p>The API supports filtering by status and minimum bikes available, sorting by any field, and full pagination — all combinable in a single request.</p>
+            <p>Real APIs rarely just return "everything" — they let the consumer narrow down exactly what they need. This one supports filtering by station status (<code>OPEN</code>/<code>CLOSED</code>) and a minimum number of available bikes, free-text search across station name and address, and sorting by any field in either direction — all of it combinable in a single request, like <code>?status=OPEN&amp;minBikes=5&amp;sort=availableBikes&amp;dir=desc</code>.</p>
             <figure>
                 <img src="assets/img/dublinbikes-filter.jpg" alt="Filtered API response showing sorted station data">
             </figure>
-            <p>Full CRUD operations are backed by input validation and correct HTTP status codes (200, 201, 400, 404, 409), documented end-to-end via Swagger/OpenAPI.</p>
+            <p>Results come back paginated, with a clear response shape — <code>totalItems</code>, <code>totalPages</code>, <code>hasNext</code>, <code>hasPrevious</code> — so a frontend consuming this API always knows exactly where it stands without guessing.</p>
+            <p>On top of the read side, the API supports full CRUD: creating a station returns <code>201 Created</code> with a proper location header, trying to create a duplicate returns <code>409 Conflict</code> instead of silently failing, invalid input returns <code>400 Bad Request</code> with clear validation errors, and looking up a station that doesn't exist returns a clean <code>404</code>. Every endpoint is documented and testable directly through Swagger/OpenAPI, so anyone evaluating the API can try it without writing a single line of client code.</p>
 
         </section>
 
@@ -74,10 +76,11 @@
         <section class="theme-light w-820px section-selector-2">
 
             <h2>Live on Azure Cosmos DB</h2>
-            <p>Station data is persisted in Azure Cosmos DB rather than a static file — meaning the API reflects a real, changing dataset, not a fixture.</p>
+            <p>Station data is persisted in Azure Cosmos DB — a NoSQL, globally distributed database — rather than a static JSON file, so the API reflects a real, continuously changing dataset instead of a fixed fixture that never moves. The project actually supports two interchangeable backends behind the same <code>IStationService</code> interface: a simple file-based mode for quick local testing, and the Cosmos DB mode for anything closer to a real deployment. Switching between them is a single configuration change — the rest of the API doesn't need to know or care which one is active.</p>
             <figure>
                 <img src="assets/img/dublinbikes-cosmosdb.jpg" alt="Azure Cosmos DB Explorer showing a live station document">
             </figure>
+            <p>Locally, I ran this against the official Azure Cosmos DB Emulator — the same emulator Microsoft ships for development — which let me build and test the entire data layer without needing a live Azure subscription while iterating. The screenshot above shows a real station document straight from that database: not a mock, not a hardcoded sample, but the actual record the API reads from and the background service writes to.</p>
 
         </section>
 
